@@ -2,11 +2,15 @@
 """
 Created on Tue Dec 22 17:18:10 2020
 
-@author: Ritwick Joshi
+@author: Ömer Sakarya
+github: https://github.com/arapfaik
+
+@editor: Ritwick Joshi
 """
 
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 import pandas as pd
 
@@ -58,7 +62,8 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
             print("Progress: {}".format("" + str(len(jobs)) + "/" + str(num_jobs)))
             if len(jobs) >= num_jobs:
                 break
-
+            actions = ActionChains(driver)
+            actions.move_to_element(job_button).perform()
             job_button.click()  #You might 
             time.sleep(1)
             collected_successfully = False
@@ -143,6 +148,15 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
                     competitors = -1
 
             except NoSuchElementException:  #Rarely, some job postings do not have the "Company" tab.
+                headquarters = -1
+                size = -1
+                founded = -1
+                type_of_ownership = -1
+                industry = -1
+                sector = -1
+                revenue = -1
+                competitors = -1
+            except ElementClickInterceptedException:
                 headquarters = -1
                 size = -1
                 founded = -1
