@@ -1,5 +1,5 @@
-.ipynb_checkpoints
+.ipynb_checkpoints/
 __pycache__/
 .vscode
 *.log
-.virtual_documents
+.virtual_documents/
