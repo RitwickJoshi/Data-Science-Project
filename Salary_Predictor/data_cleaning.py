@@ -40,7 +40,7 @@ df['job_state'] = df['Location'].apply(lambda x: x.split(',')[1])
 
 #age of company
 
-df['age'] = df.Founded.apply(lambda x: x if x < 1 else 2020-x)
+df['age'] = df.Founded.apply(lambda x: x if x < 1 else 2021-x)
 
 #job desc parsing
 #python
