@@ -8,7 +8,7 @@ Created on Tue Dec 22 17:30:36 2020
 import glassdoor_scraper as gs
 import pandas as pd
 
-path = "C:/Users/DESKTOP/Desktop/Compiler/Pythonfiles/Data-Science-Project/chromedriver_win32/chromedriver.exe"
+path = "C:/Users/DESKTOP/Desktop/Compiler/Pythonfiles/chromedriver_win32/chromedriver.exe"
 
 profile="data scientist"
 num_jobs = 500
